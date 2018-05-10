@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+// 3015번 문제는 저녁에 한 번 풀어보겠사옵니다...
 public class Main {
     static int N;
     static int[] heights;
