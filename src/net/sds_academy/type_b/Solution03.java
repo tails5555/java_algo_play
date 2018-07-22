@@ -5,8 +5,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 public class Solution03 {
@@ -16,28 +15,22 @@ public class Solution03 {
         int T = Integer.parseInt(br.readLine());
         long[] result = new long[T + 1];
         int N;
-        List<Integer> plusList;
+        PriorityQueue<Long> plusList;
         for (int k=1;k<=T;k++) {
             StringTokenizer st = new StringTokenizer(br.readLine(), " ");
             N = Integer.parseInt(st.nextToken());
             st = new StringTokenizer(br.readLine(), " ");
-            plusList = new LinkedList<Integer>();
+            plusList = new PriorityQueue<Long>();
             for(int l=0;l<N;l++){
-                plusList.add(Integer.parseInt(st.nextToken()));
+                plusList.add(Long.parseLong(st.nextToken()));
             }
-            while(plusList.size() != 1) {
-                long calculate = Long.MAX_VALUE;
-                int idx = -1;
-                for (int l = 0; l < plusList.size() - 1; l++) {
-                    long tmp = (long)(plusList.get(l) + plusList.get(l + 1));
-                    if(calculate > tmp){
-                        calculate = tmp;
-                        idx = l;
-                    }
-                }
-                result[k] += calculate;
-                plusList.set(idx, Integer.valueOf((int) calculate));
-                plusList.remove(idx + 1);
+            long putting = 0;
+            while(true) {
+                putting = (plusList.size() > 0 ? plusList.poll() : 0) + (plusList.size() > 0 ? plusList.poll() : 0);
+                result[k] += putting;
+                if(plusList.isEmpty()) break;
+                if(plusList.size() >= 1)
+                    plusList.add(putting);
             }
             if(k != T)
                 bw.append(String.format("#%d %d\n", k, result[k]));
