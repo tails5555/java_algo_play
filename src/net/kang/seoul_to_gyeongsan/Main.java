@@ -1,5 +1,6 @@
 package net.kang.seoul_to_gyeongsan;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 // 백준 14863번
@@ -54,5 +55,9 @@ public class Main {
             m = Math.max(m, dp[N][j]);
         }
         System.out.println(m);
+
+        for(int k=0;k<dp.length;k++){
+            System.out.println(Arrays.toString(dp[k]));
+        }
     }
 }
