@@ -3,6 +3,7 @@ package net.programmers;
 import java.util.LinkedList;
 import java.util.Queue;
 
+// Programmers Lv3 가장 먼 노드 문제 풀Yee
 public class Lv3FarNode {
     static final int MAX = 50001;
     public static int solution(int n, int[][] edge){
