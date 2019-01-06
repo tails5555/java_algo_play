@@ -1,4 +1,4 @@
-package net.line_intern_coding;
+package net.line_summer_intern_2018;
 
 import java.io.BufferedReader;
 import java.io.IOException;

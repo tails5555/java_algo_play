@@ -1,4 +1,4 @@
-package net.line_intern_coding;
+package net.line_summer_intern_2018;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -12,9 +12,6 @@ import java.util.regex.Pattern;
 
 // LINE 인턴 코딩 테스트 2번 문제 캔버스
 public class Ex02 {
-    public static String canvasInfo(int[] info, boolean alpha){
-        return String.format("%dx%d, %d, %d", info[0], info[1], info[2], alpha ? 1 : 0);
-    }
     public static void main(String[] args) throws IOException {
         Pattern onlyNum = Pattern.compile("[0-9]+");
         Pattern onlyHex = Pattern.compile("0x[0-9a-f]+");
