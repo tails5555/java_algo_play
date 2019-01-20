@@ -7,6 +7,8 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+// Kakao 2019 블라인드 문제 6번
+// 매칭 점수
 public class Example06 {
     static Map<String, Integer> dnsMap;
     static Web[] webs;

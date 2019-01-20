@@ -26,6 +26,7 @@ public class Example02 {
             else return stage - another.stage;
         }
     }
+
     static int[] solution(int N, int[] stages){
         Arrays.sort(stages);
         int firstIdx = 0;
@@ -45,8 +46,9 @@ public class Example02 {
         List<Integer> ids = result.stream().map(s -> s.stage).collect(Collectors.toList());
         return ids.stream().mapToInt(i->i).toArray();
     }
+
     public static void main(String[] args){
-        System.out.println(Arrays.toString(solution(5,	new int[] {2, 1, 2, 6, 2, 4, 3, 3})));
+        System.out.println(Arrays.toString(solution(5, new int[] {2, 1, 2, 6, 2, 4, 3, 3})));
         System.out.println(Arrays.toString(solution(4, new int[] {4, 4, 4, 4, 4})));
     }
 }
