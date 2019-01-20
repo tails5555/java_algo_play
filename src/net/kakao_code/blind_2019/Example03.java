@@ -1,84 +1,64 @@
 package net.kakao_code.blind_2019;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 // Kakao 2019 블라인드 문제 3번
-// 후보키
+// 후보키. 드디어 100점 나왔당♥
 public class Example03 {
-    static String[][] database;
-    static boolean[] visited;
-    static List<List<Integer>> unique;
-    static int targetCnt;
-
-    public static void confirm_unique_constraint(boolean[] visited){
-        Set<String> matchBox = new HashSet<>();
-        for (int k = 0; k < database.length; k++) {
-            List<String> tmpTuples = new ArrayList<>();
-            for (int l = 0; l < visited.length; l++) {
-                if (visited[l]) {
-                    tmpTuples.add(database[k][l]);
-                }
-            }
-
-            String tmpText = tmpTuples.toString();
-            if (matchBox.contains(tmpText)) {
-                return;
-            } else {
-                matchBox.add(tmpText);
-            }
-        }
-
-        if(matchBox.size() == database.length){
-            List<Integer> tmpList = new ArrayList<>();
-            for(int k=0;k<visited.length;k++){
-                if(visited[k]) tmpList.add(k);
-            }
-            unique.add(tmpList);
-        }
-    }
-
-    public static void combination(int idx, int cnt){
-        if(cnt == targetCnt) {
-            confirm_unique_constraint(visited);
-            return;
-        }
-        for(int k=idx;k<database[k].length;k++){
-            if(!visited[k]){
-                visited[k] = true;
-                combination(k, cnt + 1);
-                visited[k] = false;
-            }
-        }
-    }
-
     public static int solution(String[][] relation) {
-        database = relation;
-        unique = new ArrayList<>();
-        for(int k=0;k<database[0].length;k++){
-            targetCnt = k + 1;
-            visited = new boolean[database[0].length];
-            combination(0, 0);
-        }
+        Set<Integer> unique = new HashSet<>();
+        int search_cnt = 1 << relation[0].length;
+        boolean[] visit;
 
-        Set<List<Integer>> res = new HashSet<>();
-        for(List<Integer> list : unique){
-            if(!res.contains(list)){
-                boolean contain = true;
-                for(List<Integer> small : res){
-                    if(list.containsAll(small)) {
-                        contain = false;
+        // 후보키를 참조하는 진 부분 집합과 완전 집합의 총 개수는 2^(열의 수) - 1 개입니다.
+        for(int k = 1; k < search_cnt; k++){
+            visit = new boolean[relation[0].length];
+            int idx = relation[0].length - 1;
+
+            // 참조할 데이터를 bool 이진수로 표현합니다.
+            int var = k;
+            while(idx >= 0){
+                visit[idx] = (var % 2 == 1) ? true : false;
+                var /= 2;
+                idx -= 1;
+            }
+
+            // 그 행에 해당되는 문자열을 박아둡니다.
+            Set<String> matchBox = new HashSet<>();
+            for (int l = 0; l < relation.length; l++) {
+                StringBuilder sb = new StringBuilder();
+                for (int m = 0; m < visit.length; m++) {
+                    if (visit[m]) {
+                        sb.append(relation[l][m]+" ");
+                    }
+                }
+                matchBox.add(sb.toString());
+            }
+
+            // 행의 개수와 유일성이 확인된 개수가 같으면 비트 마스크 칠을 합니다.
+            // 왼쪽은 현재 집합 안에 있는 숫자들 중에 포함된 binary 가 있는 경우입니다.
+            // (0, 0, 0, 1) & (0, 0, 1, 1) = 1
+            // (0, 0, 1, 1) & (0, 1, 1, 1) = 3
+            // 오른쪽은 현재 수치에 전부 포함 되는 경우입니다.
+            // (0, 1, 1, 1) & (0, 0, 1, 1) = 3
+            // 즉 좌측과 우측의 비트끼리 부분집합이 아닌지를 확인하는 것입니다.
+            // 문제 풀 때 이런 방법을 고려 했는데 boolean 배열로 채킹하면 런타임 오류납니다. 참고 바랍니다.
+            if(matchBox.size() == relation.length){
+                boolean confirm = true;
+                for(int tmp : unique){
+                    if((tmp & k) == tmp || (tmp & k) == k) {
+                        confirm = false;
                         break;
                     }
                 }
-                if(contain){
-                    res.add(list);
+                if(confirm) {
+                    unique.add(k);
                 }
             }
         }
-        return res.size();
+
+        return unique.size();
     }
 
     public static void main(String[] args){
