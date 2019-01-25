@@ -1,7 +1,6 @@
 package net.hackerrank.hash;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,24 +8,31 @@ import java.util.Map;
 // Hacker Rank Hash Table 문제
 // Frequency Queries 문제
 public class Example05 {
-    static List<Integer> freqQuery(List<List<Integer>> queries) {
-        Map<Integer, Integer> map = new HashMap<>();
+    static List<Integer> freqQuery(int[][] queries) {
+        Map<Integer, Integer> freq = new HashMap<>();
+        Map<Integer, Integer> count = new HashMap<>();
         List<Integer> res = new ArrayList<>();
-        for(List<Integer> query : queries) {
-            int op = query.get(0);
-            int num = query.get(1);
+        for(int k = 0; k < queries.length; k++){
+            int op = queries[k][0];
+            int num = queries[k][1];
+            int tmp_freq;
             switch(op) {
                 case 1 :
-                    map.put(num, map.getOrDefault(num, 0) + 1);
+                    tmp_freq = freq.getOrDefault(num, 0);
+                    count.put(tmp_freq, count.getOrDefault(tmp_freq, 0) - 1);
+                    freq.put(num, ++tmp_freq);
+                    count.put(tmp_freq, count.getOrDefault(tmp_freq, 0) + 1);
                     break;
                 case 2 :
-                    if(map.containsKey(num)){
-                        if(map.get(num) <= 1) map.remove(num);
-                        else map.put(num, map.get(num) - 1);
+                    if(freq.getOrDefault(num, 0) > 0){
+                        tmp_freq = freq.getOrDefault(num, 0);
+                        count.put(tmp_freq, count.getOrDefault(tmp_freq, 0) - 1);
+                        freq.put(num, --tmp_freq);
+                        count.put(tmp_freq, count.getOrDefault(tmp_freq, 0) + 1);
                     }
                     break;
                 case 3 :
-                    if(map.containsValue(num))
+                    if(count.getOrDefault(num, 0) > 0)
                         res.add(1);
                     else res.add(0);
                     break;
@@ -37,9 +43,9 @@ public class Example05 {
     }
 
     public static void main(String[] args){
-        List<List<Integer>> query1 = Arrays.asList(
-            Arrays.asList(1, 5), Arrays.asList(1, 6), Arrays.asList(3, 2), Arrays.asList(1, 10), Arrays.asList(1, 10), Arrays.asList(1, 6), Arrays.asList(2, 5), Arrays.asList(3, 2)
-        );
+        int[][] query1 = new int[][] {
+            { 1, 5 }, { 1, 6 }, { 3, 2 }, { 1, 10 }, { 1, 10 }, { 1, 6 }, { 2, 5 }, { 3, 2 }
+        };
         System.out.println(freqQuery(query1));
     }
 }

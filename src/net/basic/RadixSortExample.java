@@ -3,6 +3,8 @@ package net.basic;
 import java.util.Arrays;
 import java.util.Random;
 
+// 기수 정렬 알고리즘
+// O(n) 으로 정렬 속도를 향상 시킬 수 있음.
 public class RadixSortExample {
     public static int max_exponent(int[] arr, int not){
         int max_expo = Integer.MIN_VALUE;
