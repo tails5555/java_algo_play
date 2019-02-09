@@ -30,7 +30,12 @@
     - 압구정 가서 그냥 얻어 온 문제들
     
 - Basic Source
-    - 코딩 테스트를 공부하면서 깨알 같이 알아두면 좋은 팁들 작성
+    - 기수 정렬(Radix Sort) 알고리즘
+    - 비트 연산자를 이용한 조합 문제 풀이
+    - 두 개의 Heap(Priority Queue) 를 이용한 중앙값 찾기
+    - Heap 에 대한 최적화 문제 풀이
+    - LIS(Longest Increasing Subsequence) 알고리즘
+    - 최대공약수(GCD) 와 최소공배수(LCM) 알고리즘
     
 ### Coding Interview
     
