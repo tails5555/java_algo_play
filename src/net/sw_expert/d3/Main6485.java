@@ -1,4 +1,4 @@
-package net.sw_expert;
+package net.sw_expert.d3;
 
 import java.util.Scanner;
 
