@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-// SW Expert D3 암호문 쿼리 문제 풀이
+// SW Expert D3 암호문 쿼리 문제 풀이. 1228, 1229 번 문제는 그냥 제출만 하겠음.
 public class Main1230 {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
@@ -33,7 +33,7 @@ public class Main1230 {
                     int remIdx = s.nextInt();
                     int remCnt = s.nextInt();
                     for(int m = 0; m < remCnt; m++){
-                        list.remove(remIdx + m);
+                        list.remove(remIdx);
                     }
                 }
                 else if(com.equals("A")) {
