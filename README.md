@@ -26,6 +26,8 @@
 - Hacker Rank Interview Question 문제
     - 해커 랭크 문제는 Medium 도 워낙 까다로워 풀이 참조한 문제도 존재할 수 있음.
 
+- Leetcode Interview Question 문제
+
 - Algorithm Jobs Question 문제
     - 압구정 가서 그냥 얻어 온 문제들
     
@@ -36,7 +38,7 @@
     - Heap 에 대한 최적화 문제 풀이
     - LIS(Longest Increasing Subsequence) 알고리즘
     - 최대공약수(GCD) 와 최소공배수(LCM) 알고리즘
-    
+
 ### Coding Interview
     
 - Daum Kakao Algorithm
