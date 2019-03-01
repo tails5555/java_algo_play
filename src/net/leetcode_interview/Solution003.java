@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 // Leetcode Interview Question No. 3
+// 한 번씩 사용된 알파벳 단어 중 긴 거 반환하는 문제
 // 슬라이딩 윈도우 + 해시 테이블 활용 여부 문제.
 // 풀이 참조함...ㅜ
 public class Solution003 {

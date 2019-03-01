@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 // Leetcode Interview Question No. 1
+// 두 수의 덧셈
 public class Solution001 {
     public static int[] twoSum(int[] nums, int target) {
         Map<Integer, List<Integer>> map = new HashMap<>();

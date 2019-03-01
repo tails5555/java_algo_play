@@ -1,6 +1,7 @@
 package net.leetcode_interview;
 
 // Leetcode Interview Question No. 2
+// 링크드리스트 덧셈
 class ListNode {
     int val;
     ListNode next;
