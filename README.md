@@ -2,6 +2,13 @@
 
 알고리즘 공부를 진행하면서 작성한 소스 코드 모음입니다.
 
+## Algorithm Information
+
+- Baekjoon(acmicpc) : https://www.acmicpc.net/user/tails5555
+- SW Expert : https://www.swexpertacademy.com/main/userpage/code/userCode.do?userId=AWeOCQtaU_sDFATb
+- Hacker Rank, Leetcode 는 시작한지 얼마 안 돼서 계속 풀이 하겠습니다! 
+- Oncoder 10th : https://www.oncoder.com/developer/score-detail/rJeuRufBH4
+
 ## Contexts
 
 ### Coding Study
