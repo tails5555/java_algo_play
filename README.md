@@ -5,7 +5,7 @@
 ## Algorithm Information
 
 - Baekjoon(acmicpc) : https://www.acmicpc.net/user/tails5555
-- SW Expert : https://www.swexpertacademy.com/main/userpage/code/userCode.do?userId=AWeOCQtaU_sDFATb
+- SW Expert : 코딩하는힙충이(hogu9401@gmail.com) / 링크 접속이 안 되어 닉네임으로 남기겠습니다.
 - Hacker Rank, Leetcode 는 시작한지 얼마 안 돼서 계속 풀이 하겠습니다! 
 - Oncoder 10th : https://www.oncoder.com/developer/score-detail/rJeuRufBH4
 
