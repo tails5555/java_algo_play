@@ -7,7 +7,6 @@ import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 // SW Expert D4 하나로 문제 풀이
-// 웰케 정답이 안 나올까 ㅜㅜ
 public class Main1251 {
     static class Way implements Comparable<Way> {
         double dist;
@@ -22,10 +21,7 @@ public class Main1251 {
 
         @Override
         public int compareTo(Way o) {
-            if(this.dist == o.dist) {
-                if(this.from == o.from) return this.to - o.to;
-                else return this.from - o.from;
-            } else return (int) this.dist - (int) o.dist;
+            return (this.dist < o.dist) ? -1 : 1;
         }
 
         @Override
@@ -70,7 +66,7 @@ public class Main1251 {
             PriorityQueue<Way> pq = new PriorityQueue<>();
             for(int l = 0; l < N; l++){
                 for(int m = 0; m < N; m++){
-                    if(l < m) {
+                    if(l != m) {
                         pq.offer(new Way((Math.pow(Math.abs(posX[l] - posX[m]), 2) + Math.pow(Math.abs(posY[l] - posY[m]), 2)) * E, l, m));
                     }
                 }
