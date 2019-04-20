@@ -1,4 +1,4 @@
-package net.koi;
+package net.koi_region;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-// Baekjoon KOI 중등부 2004 본선 4번 자동차 경주 문제 풀이
+// Baekjoon KOI 중등부 2004 지역본선 4번 자동차 경주 문제 풀이
 // dijkstra 에서는 최소의 비용을 요구했지만, 이 문제는 반대로 최대 경로를 요구하여 반대의 요구사항만 잘 맞추면 풀 수 있는 문제.
 public class Main2611 {
     static final int MIN = -987654321;

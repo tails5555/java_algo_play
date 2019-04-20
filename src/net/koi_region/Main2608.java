@@ -1,4 +1,4 @@
-package net.koi;
+package net.koi_region;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
-// Baekjoon KOI 초등부 2004 본선 5번 로마 숫자 문제 풀이
+// Baekjoon KOI 2004 초등부 지역본선 5번 로마 숫자 문제 풀이
 public class Main2608 {
     static BufferedReader br;
     static String roman1, roman2;

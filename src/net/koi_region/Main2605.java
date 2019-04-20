@@ -1,4 +1,4 @@
-package net.koi;
+package net.koi_region;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
-// Baekjoon 2605 번 KOI 2004 초등부 줄 세우기 문제 풀이
+// Baekjoon 2605 번 KOI 2004 초등부 지역본선 줄 세우기 문제 풀이
 public class Main2605 {
     static BufferedReader br;
     static StringTokenizer st;

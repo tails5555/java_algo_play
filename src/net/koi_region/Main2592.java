@@ -1,4 +1,4 @@
-package net.koi;
+package net.koi_region;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
-// Baekjoon KOI 2005 중등부 1번 기댓값 문제 풀이
+// Baekjoon KOI 2005 중등부 지역본선 1번 기댓값 문제 풀이
 public class Main2592 {
     static BufferedReader br;
     static int avg;

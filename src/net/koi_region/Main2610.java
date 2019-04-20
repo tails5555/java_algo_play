@@ -1,4 +1,4 @@
-package net.koi;
+package net.koi_region;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 
-// Baekjoon 2610 번 KOI 2004 중등부 3번 회의 준비 문제 풀이
+// Baekjoon 2610 번 KOI 2004 지역본선 중등부 3번 회의 준비 문제 풀이
 // 다행히도 N 은 작은 값(100) 이라서 플로이드 워샬 알고리즘이면 충분하다.
 public class Main2610 {
     static final int MAX = 987654321;

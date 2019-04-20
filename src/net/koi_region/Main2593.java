@@ -1,4 +1,4 @@
-package net.koi;
+package net.koi_region;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,24 +9,24 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-class Edge implements Comparable<Edge> {
-    int to;
-    int weight;
-    public Edge(int to, int weight){
-        this.to = to;
-        this.weight = weight;
-    }
-
-    @Override
-    public int compareTo(Edge edge){
-        return (this.weight < edge.weight) ? -1 : 1;
-    }
-}
-
-// Baekjoon KOI 2005 중등부 본선 4번 엘리베이터 문제 풀이
+// Baekjoon KOI 2005 중등부 지역본선 4번 엘리베이터 문제 풀이
 // for each 대신 인덱스를 사용한 이유는 iterator 로 인한 메모리 초과를 방지하기 위함.
 public class Main2593 {
     static final int MAX = 987654321;
+
+    static class Edge implements Comparable<Edge> {
+        int to;
+        int weight;
+        public Edge(int to, int weight){
+            this.to = to;
+            this.weight = weight;
+        }
+
+        @Override
+        public int compareTo(Edge edge){
+            return (this.weight < edge.weight) ? -1 : 1;
+        }
+    }
 
     static void print(int[] prev, int elevator){
         if(elevator == 0) return;

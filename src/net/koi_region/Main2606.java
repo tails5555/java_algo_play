@@ -1,11 +1,11 @@
-package net.koi;
+package net.koi_region;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-// Baekjoon KOI 초등부 2004 본선 3번 바이러스 문제 풀이
+// Baekjoon KOI 2004 초등부 지역 본선 3번 바이러스 문제 풀이
 public class Main2606 {
     static BufferedReader br;
     static StringTokenizer st;

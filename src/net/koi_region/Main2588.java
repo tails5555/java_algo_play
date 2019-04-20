@@ -1,10 +1,10 @@
-package net.koi;
+package net.koi_region;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-// Baekjoon KOI 2005 초등부 본선 2번 곱셈 문제 풀이
+// Baekjoon KOI 2005 초등부 지역본선 2번 곱셈 문제 풀이
 public class Main2588 {
     static BufferedReader br;
     static int n1, n2;
